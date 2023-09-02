@@ -9,7 +9,7 @@ pygame.init()
 
 # Background Sound
 mixer.music.load(
-    '\\Python\\games\\joker shooting\\images_audio\\funny-tango-dramatic-music-for-video-1-minute-150834.mp3')
+    'images_audio/funny-tango-dramatic-music-for-video-1-minute-150834.mp3')
 mixer.music.set_volume(0.2)
 mixer.music.play(-1)
 
@@ -17,15 +17,15 @@ mixer.music.play(-1)
 screen = pygame.display.set_mode((800, 600))
 
 # background
-background = pygame.image.load('')
+background = pygame.image.load('images_audio/8538.jpg')
 
 # Caption, Icon
 pygame.display.set_caption("Joker")
-icon = pygame.image.load('..\\8538.jpg')
+icon = pygame.image.load('images_audio/8538.jpg')
 pygame.display.set_icon(icon)
 
 # Player
-playerImg = pygame.image.load('..\\52778-joker-icon.png')
+playerImg = pygame.image.load('images_audio/52778-joker-icon.png')
 playerX = 370
 playerY = 480
 player_dx = 0
@@ -40,14 +40,14 @@ starting_dx = [0.8, -0.8]
 num_of_enemies = 6
 
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('..\\52778-joker-icon.png'))
+    enemyImg.append(pygame.image.load('images_audio/52778-joker-icon.png'))
     enemyX.append(random.randint(75, 725))
     enemyY.append(50)
     enemy_dx.append(random.choice(starting_dx))
     enemy_dy.append(50)
 
 # bullet
-bulletImg = pygame.image.load('..\\2634116.jpg')
+bulletImg = pygame.image.load('images_audio/2634116.jpg')
 bulletX = 0
 bulletY = 450
 bullet_dx = 0
@@ -120,7 +120,7 @@ while running:
                     bulletX = playerX
                     fire_bullet(bulletX, bulletY)
                     bullet_sound = mixer.Sound(
-                        '..\\JMZYK79-swoosh-thin-very-fast.mp3')
+                        'images_audio/JMZYK79-swoosh-thin-very-fast.mp3')
                     bullet_sound.play()
 
         else:
@@ -138,7 +138,7 @@ while running:
             game_over_text()
             pygame.display.update()
             mixer.music.stop()
-            end_sound = mixer.Sound('..\\joker-laugh.mp3')
+            end_sound = mixer.Sound('images_audio/joker-laugh.mp3')
             end_sound.set_volume(0.6)
             end_sound.play()
             sleep(3.5)
@@ -164,7 +164,8 @@ while running:
             score += 1
             enemyX[i] = random.randint(75, 725)
             enemyY[i] = 50
-            death_sound = mixer.Sound('..\\D9EP5J8-zombie-death-snarl.mp3')
+            death_sound = mixer.Sound(
+                'images_audio/D9EP5J8-zombie-death-snarl.mp3')
             death_sound.set_volume(0.5)
             death_sound.play()
 
